@@ -1,106 +1,139 @@
 {% load static %}
 <head>
-<style>
-      #fron{
-          font-family: "TH Sarabun New";
-        font-size: 25px;
-        {#  text-align: center;#}
-        {#color: black;#}
-      }
+    <style>
+        #fron {
+            font-family: "TH Sarabun New";
+            font-size: 25px;
+        {#  text-align: center;#}{#color: black;#}
+        }
 
 
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: transparent;
+        }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: transparent;
-}
+        li {
+            float: left;
+        }
 
-li {
-  float: left;
-}
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
 
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-.button {
-  padding: 3px 9px;
-  font-size: 20px;
-  text-align: center;
-  cursor: pointer;
-  outline: none;
-  color: #fff;
-  background-color: #74BDCB;
-  border: none;
-  border-radius: 15px;
+        .button {
+            padding: 3px 9px;
+            font-size: 20px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: #fff;
+            background-color: #74BDCB;
+            border: none;
+            border-radius: 15px;
 
-}
+        }
 
-.button:hover {background-color: #3e8e41}
+        .button:hover {
+            background-color: #3e8e41
+        }
 
-.button:active {
-  background-color: transparent;
-  transform: translateY(4px);
-}
+        .button:active {
+            background-color: transparent;
+            transform: translateY(4px);
+        }
 
-li a:hover:not(.active) {
-  background-color: #3e8e41;
-}
+        li a:hover:not(.active) {
+            background-color: #3e8e41;
+        }
 
-.active {
-  background-color: transparent;
-}
-.dropbtn {
-  background-color: #D4F1F4;
-  color: red;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
+        .active {
+            background-color: transparent;
+        }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
+        .dropbtn {
+            background-color: #D4F1F4;
+            color: red;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
 
-.dropdown-content {
-  display: none;
-  position: relative;
-  background-color: transparent;
-  min-width: 160px;
-  {#box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);#}
-  z-index: 1;
-}
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
 
-.dropdown-content a {
-  color: ivory;
-  padding: 1px 15px;
-  text-decoration: none;
-  display: block;
-}
+        .dropdown-content {
+            display: none;
+            position: relative;
+            background-color: transparent;
+            min-width: 160px;
+        {#box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);#} z-index: 1;
+        }
 
-.dropdown-content a:hover {background-color: #ddd;}
+        .dropdown-content a {
+            color: ivory;
+            padding: 1px 15px;
+            text-decoration: none;
+            display: block;
+        }
 
-.dropdown:hover .dropdown-content {display: block;}
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
 
-.dropdown:hover .dropbtn {background-color: transparent;}
-</style>
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropbtn {
+            background-color: ivory;
+            opacity: 0.8;
+            background-color: ivory;
+        }
+    </style>
 </head>
-<body>
-<div class="dropdown">
-  <button id="fron" class="button" >เมนู</button>
-  <div class="dropdown-content">
-    <li id="fron"><a class="button" href="{% url 'profile' %}">ประวัติส่วนตัว</a></li>
-    <li id="fron"><a class="button" href="{% url 'study' %}">ประวัติการศึกษา</a></li>
-    <li id="fron"><a class="button" href="{% url 'interests' %}">สิ่งที่สนใจ</a></li>
-    <li id="fron"><a class="button" href="{% url 'idol' %}">บุคคลต้นแบบ</a></li>
-    <li id="fron"><a class="button" href="{% url 'product' %}">รายการสินค้า</a></li>
-  </div>
+
+<!-- Offcanvas Sidebar -->
+<div class="offcanvas offcanvas-start active" id="demo" >
+    <div class="offcanvas-header dropbtn ">
+        <button type="button" class="btn-close text-reset " data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body" >
+
+        <a href="{% url 'profile' %}">
+            <button class="btn btn-secondary button" > ประวัติส่วนตัว</button>
+        </a><br> <br>
+        <a href="{% url 'study' %}">
+            <button class="btn btn-secondary button" > ประวัติการศึกษา </button>
+        </a><br> <br>
+        <a href="{% url 'interests' %}">
+            <button class="btn btn-secondary button" >สิ่งที่สนใจ</button>
+        </a> <br> <br>
+        <a href="{% url 'idol' %}">
+        <button class="btn btn-secondary button" >บุคคลต้นแบบ</button>
+    </a> <br> <br>
+        <a href="{% url 'product' %}">
+        <button class="btn btn-secondary button">รายการสินค้า</button>
+    </a>
+
+
+    </div>
 </div>
+
+<!-- Button to open the offcanvas sidebar -->
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+    เมนู
+</button>
+
+
+<body>
 </body>
