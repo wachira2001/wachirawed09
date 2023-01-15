@@ -1,0 +1,33 @@
+{% load static %}
+<html>
+    <head>
+        <title>WACHIRA</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/css/bootstrap.css' %}">
+        <script src="{% static 'stylesheets/js/bootstrap.js' %}"></script>
+        <style>
+            body
+            {
+                background-color: #189AB4;
+            {#background-image: url({% static 'images/bk.jpg' %});#}
+            }
+        </style>
+    </head>
+    <body>
+    <tr>
+
+
+        <div class="col-lg-auto" style="background-color:transparent;
+            color: transparent">
+
+            {% include 'menu.html' %}
+
+        </div>
+
+        <div class="col-lg-12">
+            <br><br><br>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </tr>
+</body>
+</html>

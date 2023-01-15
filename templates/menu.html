@@ -1,0 +1,106 @@
+{% load static %}
+<head>
+<style>
+      #fron{
+          font-family: "TH Sarabun New";
+        font-size: 25px;
+        {#  text-align: center;#}
+        {#color: black;#}
+      }
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.button {
+  padding: 3px 9px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #74BDCB;
+  border: none;
+  border-radius: 15px;
+
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: transparent;
+  transform: translateY(4px);
+}
+
+li a:hover:not(.active) {
+  background-color: #3e8e41;
+}
+
+.active {
+  background-color: transparent;
+}
+.dropbtn {
+  background-color: #D4F1F4;
+  color: red;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: transparent;
+  min-width: 160px;
+  {#box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);#}
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: ivory;
+  padding: 1px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: transparent;}
+</style>
+</head>
+<body>
+<div class="dropdown">
+  <button id="fron" class="button" >เมนู</button>
+  <div class="dropdown-content">
+    <li id="fron"><a class="button" href="{% url 'profile' %}">ประวัติส่วนตัว</a></li>
+    <li id="fron"><a class="button" href="{% url 'study' %}">ประวัติการศึกษา</a></li>
+    <li id="fron"><a class="button" href="{% url 'interests' %}">สิ่งที่สนใจ</a></li>
+    <li id="fron"><a class="button" href="{% url 'idol' %}">บุคคลต้นแบบ</a></li>
+    <li id="fron"><a class="button" href="{% url 'product' %}">รายการสินค้า</a></li>
+  </div>
+</div>
+</body>
