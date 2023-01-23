@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load fontawesome_5 %}
+{% fontawesome_5_static %}
+{% block content %}
+    <h1 class="text-danger text-center bg-white"> ทำในคาบ </h1>
+    <table class="table text-danger table-striped table-hover">
+    <tr>
+        <th> id</th>
+         <th> name </th>
+         <th> brand </th>
+         <th> price </th>
+         <th> net </th>
+
+
+    </tr>
+    {% for product in products %}
+        <tr>
+
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.brand }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.net }}</td>
+
+        </tr>
+
+    {% endfor %}
+
+    </table>
+
+{% endblock %}

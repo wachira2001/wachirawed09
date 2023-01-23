@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from static import images
+from django.shortcuts import render,HttpResponse,redirect
+
 def idol(request):
     return render(request, 'idol.html')
 def interests(request):
@@ -45,5 +45,34 @@ def showmydata(request):
 
 
 
+
+
+
+from ProfileApp.models import *
+productList = []
+def show(request):
+
+    # product = Product('p0001','mouse', 'Aser', '500.00', '120')
+    # productList.append(product)
+    # product = Product('p0002', 'keyboard', 'Aser', '500.00', '120')
+    # productList.append(product)
+    # product = Product('p0003', 'screen', 'Aser', '500.00', '120')
+    # productList.append(product)
+    context = {'products': productList}
+    return render(request,'show.html',context)
+
+
+def newProduct(request):
+    if request.method=='POST':
+        id = request.POST['id']
+        name = request.POST['name']
+        brand = request.POST['brand']
+        price = request.POST['price']
+        net = request.POST['net']
+        product = Product(id,name,brand,price,net)
+        productList.append(product)
+        return  redirect('show')
+    else:
+        return render(request,'productnormal.html')
 
 # Create your views here.
