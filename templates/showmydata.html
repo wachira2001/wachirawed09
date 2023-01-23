@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        #fron {
+            font-family: "ThaiSans Neue";
+            font-size: 60px;
+            color: black;
+            text-align: center;
+        }
+
+        #fron1 {
+            font-family: "ThaiSans Neue Black";
+            font-size: 18px;
+            color: black;
+            text-align: center;
+
+        }
+
+
+    </style>
+    <div class="row">
+        <div class="col-lg-2"></div>
+
+        <div class="col-lg-8 container mt-2">
+
+
+            <table class="table table-striped" id="fron1">
+
+                <h1 id="fron">ข้อมูลส่วนตัว</h1>
+
+                <tr>
+                    <td>ชื่อ {{ name }}</td>
+                    <td>ชื่อเล่น {{ nickname }}</td>
+                </tr>
+                <tr>
+                    <td>อายุ {{ age }}</td>
+                    <td>น้ำหนัก {{ weight }}</td>
+                </tr>
+                <tr>
+                    <td> ส่วนสูง {{ height }} </td>
+                    <td> สัญชาติ {{ nationality }}</td>
+                </tr>
+                <tr>
+                    <td> สาศนา {{ sermon }} </td>
+                    <td> เบอร์โทร {{ phone }}</td>
+                </tr>
+                <tr>
+                    <td> วันเกิด {{ birthday }} </td>
+                    <td> กรุ๊ปเลือด {{ blood }}</td>
+                </tr>
+
+                </tr>
+
+
+            </table>
+
+
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+
+    <div class="row">
+    <div class="col-lg-2"></div>
+        <div class="col-md-8">
+            <h3  id="fron" class="h5 mb-4 text-center">ข้อมูลสินค้า</h3>
+            <div class="table-wrap">
+                <table class="table">
+                    <thead class="thead-primary">
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th id="fron1">สินค้า</th>
+                        <th id="fron1">ราคา</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for list in product %}
+                    <tr class="alert" role="alert">
+                        <tr>
+                        <td><img src="{% static list.2 %}"class="max-width: 50%; height: auto;" style="width: 100px" ></td>
+                        <td id="fron1">{{ list.0 }}</td>
+                        <td id="fron1">{{ list.1 }}</td>
+
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    <div class="col-lg-2"></div>
+    </div>
+{% endblock %}
