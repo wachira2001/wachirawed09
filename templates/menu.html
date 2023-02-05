@@ -102,6 +102,29 @@
     </style>
 </head>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Offcanvas Sidebar -->
 <div class="offcanvas offcanvas-start active" id="demo" >
     <div class="offcanvas-header dropbtn ">
@@ -128,15 +151,23 @@
         <a href="{% url 'showmydata' %}">
         <button class="btn btn-secondary button">ข้อมูลส่วนตัว</button>
     </a>
-        <br> <br>
-        <a href="{% url 'show' %}">
-        <button class="btn btn-secondary button">รายการสินค้าในคาบ</button>
+ <br> <br>
+        <a href="{% url 'inputProduct' %}">
+        <button class="btn btn-secondary button">ป้อนรายการสินค้า</button>
     </a>
-        </a>
         <br> <br>
-        <a href="{% url 'newProduct' %}">
-        <button class="btn btn-secondary button">รายการสินค้าในคาบ2</button>
+        <a href="{% url 'listProduct' %}">
+        <button class="btn btn-secondary button">แสดงรายการสินค้า</button>
     </a>
+{#        <br> <br>#}
+{#        <a href="{% url 'show' %}">#}
+{#        <button class="btn btn-secondary button">รายการสินค้าในคาบ</button>#}
+{#    </a>#}
+{#        </a>#}
+{#        <br> <br>#}
+{#        <a href="{% url 'newProduct' %}">#}
+{#        <button class="btn btn-secondary button">รายการสินค้าในคาบ2</button>#}
+{#    </a>#}
 
     </div>
 </div>

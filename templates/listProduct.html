@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load fontawesome_5 %}
+{% fontawesome_5_static %}
+{% block content %}
+    <h1 class="text-danger text-center bg-white"> รายการสินค้าที่ป้อน </h1>
+    <table class="table text-danger table-striped table-hover">
+
+        <tr class="text-center">
+            <th> รหัสสินค้า</th>
+            <th> ชื่อสินค้า</th>
+            <th> ราคาสินค้า</th>
+            <th> แบรนด์สินค้า</th>
+            <th> ขนาดสินค้า</th>
+            <th> ประเภทสินค้า</th>
+            <th> จำนวนสินค้า</th>
+            <th> ราคาสินค้าทั้งหมด</th>
+            <th> ภาษีของสินค้าทั้งหมด</th>
+            <th> ราคาสินค้าทั้งหมด</th>
+
+
+        </tr>
+        {% for listproduct in products %}
+            <tr class="text-center">
+
+                <td>{{ listproduct.getPID }}</td>
+                <td>{{ listproduct.getPname }}</td>
+                <td>{{ listproduct.getPrice }}</td>
+                <td>{{ listproduct.getBrand }}</td>
+                <td>{{ listproduct.getSzie }}</td>
+                <td>{{ listproduct.getType }}</td>
+                <td>{{ listproduct.getAmount }}</td>
+                <td>{{ listproduct.getTotal|floatformat:2 }}</td>
+                <td>{{ listproduct.getVat|floatformat:2 }}</td>
+                <td>{{ listproduct.getNet|floatformat:2 }}</td>
+
+
+            </tr>
+
+        {% endfor %}
+
+    </table>
+    <div class="row my-4">
+        <div class="col-md-12">
+            <a href="{% url 'inputProduct' %}" class="btn btn-black float-end">
+                <i class="fas fa-plus"></i>
+                <input type="submit" value="เพิ่มสินค้า" class="btn btn-success">
+
+            </a>
+        </div>
+    </div>
+
+{% endblock %}
